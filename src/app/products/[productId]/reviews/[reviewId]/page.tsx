@@ -1,3 +1,4 @@
+// Nested dynamic routing
 export default async function ReviewDetail( {
     params,
 }: {

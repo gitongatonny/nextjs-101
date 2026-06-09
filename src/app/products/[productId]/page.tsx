@@ -1,3 +1,4 @@
+//Dynamic routes
 export default async function ProductDetail( {
     params,
 }: {
