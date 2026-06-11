@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Next.js 101",
+  description: "Learning Next.js"
+};
+
 //Root layout file
 import type { ReactNode } from "react";
 
