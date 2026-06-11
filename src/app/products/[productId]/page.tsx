@@ -1,5 +1,5 @@
 //Dynamic routes
-export default async function ProductDetail( {
+export default async function ProductDetails( {
     params,
 }: {
     params: Promise<{ productId: string }>;
