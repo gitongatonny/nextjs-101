@@ -1,5 +1,15 @@
-export const metadata = {
-  title: "Next.js 101",
+////Root page metadata
+
+//Importing metadata
+import { Metadata } from "next";
+
+//3 types of object value metadata
+export const metadata: Metadata = {
+  title: {
+    template: "%s | CompanyName",
+    default: "Page | CompanyName",
+    //absolute: "", //use to set an absolute value that overrules any parent configs (not used on root file)
+  },
   description: "Learning Next.js"
 };
 
