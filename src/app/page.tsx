@@ -10,7 +10,8 @@ export default function Home() {
 
     <Link href="/blog">Blog</Link>
     <br />
-
+    
+    {/* params and searchparams */}
     <Link href="/articles/breaking-news?lang=en">Read in English</Link>
     <br />
 
