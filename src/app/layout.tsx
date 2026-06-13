@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 
 //Root layout file
 import type { ReactNode } from "react";
+import Navbar from "@/components/Navbar";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -29,6 +30,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         >
           <p style={{ fontWeight: "bold" }} >Header Sample</p>
         </header>
+
+        <Navbar />
 
         {children}
 

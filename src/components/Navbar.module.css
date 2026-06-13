@@ -1,0 +1,28 @@
+/* Navbar wrapper — horizontal flex strip sitting below the site header */
+.navbar {
+  display: flex;
+  gap: 0;
+  background-color: #1a1a1a;
+  border-bottom: 1px solid #333; /* subtle separator from page content */
+}
+
+/* Base link — muted by default so the active state reads as a clear upgrade */
+.navLink {
+  padding: 0.75rem 1.25rem;
+  color: #aaa;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s ease; /* smooth hover, no layout shift */
+}
+
+.navLink:hover {
+  color: #fff;
+}
+
+/* Active state — applied by isActive() in Navbar.tsx.
+   Orange matches the site header accent color (#ff7a21). */
+.active {
+  color: #fff;
+  background-color: #111;
+  border-bottom: 3px solid #ff7a21;
+}
