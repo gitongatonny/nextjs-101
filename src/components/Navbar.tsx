@@ -22,6 +22,7 @@ export default function Navbar() {
   // still highlight the parent link, while the trailing-slash guard prevents
   // false positives (e.g. /about not matching /about-us).
   function isActive(href: string): boolean {
+    if (!pathname) return false;
     if (href === "/") return pathname === "/";
     return pathname === href || pathname.startsWith(href + "/");
   }

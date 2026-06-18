@@ -10,8 +10,8 @@ export default function NotFound() {
     const pathname = usePathname();
 
     //Extract the product and review IDs from the URL
-    const productId = pathname.split("/")[2];
-    const reviewId = pathname.split("/")[4];
+    const productId = pathname?.split("/")[2] || "Unknown";
+    const reviewId = pathname?.split("/")[4] || "Unknown";
 
     //Show a dynamic message corresponding the specific review and product requested.
     return (
