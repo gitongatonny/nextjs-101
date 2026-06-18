@@ -1,9 +1,32 @@
-//Define it as a client component
-"use client"
+"use client";
 
-//Error msg in prod build - passed from page.tsx for 'dynamism'
-export default function ErrorBoundary({ error }: {
-    error: Error
+import { startTransition } from "react";
+import { useRouter } from "next/navigation";
+
+// Error boundary for this route segment
+export default function ErrorBoundary({
+  error,
+  reset,
+}: {
+  error: Error;
+  reset: () => void;
 }) {
-    return <div> <br /> {error.message} </div>;
+  const router = useRouter();
+
+  // Retry handler:
+  // 1. Refreshes the route so server components run again
+  // 2. Resets the error boundary so React can attempt a fresh render
+  function handleRetry() {
+    startTransition(() => {
+      router.refresh();
+      reset();
+    });
+  }
+
+  return (
+    <div>
+      <p>Something went wrong: {error.message}</p>
+      <button onClick={handleRetry}>Try again</button>
+    </div>
+  );
 }
