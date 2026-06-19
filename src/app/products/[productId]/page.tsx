@@ -14,14 +14,15 @@ export const generateMetadata = async ({
     setTimeout(() => {
       resolve(`iPhone: ${id}`);
     }, 100);
-  })
+  });
   return {
     title: `Product: ${title}`,
   };
 };
 
 //Dynamic routes
+// If no error happens, render the product details and the random #
 export default async function ProductDetails({ params }: Props) {
   const productId = (await params).productId;
-  return <h1> This is product: {productId}</h1>;
+  return <h1> This is product: {productId} </h1>;
 }

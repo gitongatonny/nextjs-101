@@ -1,11 +1,14 @@
 // Import Next.js navigation helpers
 import { redirect } from "next/navigation";
 
+
+/*
 // Simple helper fn:
-// Returns a random whole number between 1 and 100
+// Returns a random whole number between 1 and 100/
 function getRandomNumber(): number {
     return Math.floor(Math.random() * 100) + 1;
 }
+*/
 
 // Nested dynamic route page
 export default async function ReviewDetail({
@@ -21,20 +24,21 @@ export default async function ReviewDetail({
         redirect("/products");
     }
 
+    /*
     // Generate a random # that we will show on the page
     const randomNumber = getRandomNumber();
 
     // Deliberately fail when the random number is > 50
     // Allows me to test route-level error handling with error.tsx
     if (randomNumber > 50) {
-        throw new Error("Intentional error for testing error.tsx (error handling)");
+        throw new Error("Intentional error for testing error.tsx (error handling) - Reviews");
     }
+        */
 
     // If no error happens, render the review details and the random #
     return (
         <h1>
-            This is review: {reviewId} for product: {productId} | Random number:{" "}
-            {randomNumber}
+            This is review: {reviewId} for product: {productId} 
         </h1>
     );
 }
