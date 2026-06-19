@@ -3,6 +3,9 @@
 //Importing metadata
 import { Metadata } from "next";
 
+//Importing the error wrapper
+import { ErrorWrapper } from "./error-wrapper";
+
 //3 types of object value metadata
 export const metadata: Metadata = {
   title: {
@@ -10,7 +13,7 @@ export const metadata: Metadata = {
     default: "Page | CompanyName",
     //absolute: "", //use to set an absolute value that overrules any parent configs (not used on root file)
   },
-  description: "Learning Next.js"
+  description: "Learning Next.js",
 };
 
 //Root layout file
@@ -28,12 +31,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             padding: "0.5rem",
           }}
         >
-          <p style={{ fontWeight: "bold" }} >Header Sample</p>
+          <p style={{ fontWeight: "bold" }}>Header Sample</p>
         </header>
 
         <Navbar />
 
-        {children}
+        {/* Wrap children components */}
+        <ErrorWrapper> {children} </ErrorWrapper>
 
         {/* Global Footer */}
         <footer
@@ -42,7 +46,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             padding: "0.5rem",
           }}
         >
-          <p style={{ color: "white", fontWeight: "bold"}} >Footer Sample</p>
+          <p style={{ color: "white", fontWeight: "bold" }}>Footer Sample</p>
         </footer>
       </body>
     </html>
