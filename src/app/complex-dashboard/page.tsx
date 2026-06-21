@@ -1,5 +1,5 @@
 //Main Dash Page
 
 export default function ComplexDashboardPage() {
-    return <h1>Complex dashboard</h1>;
+    return <h1>Complex Dashboard</h1>;
   }
