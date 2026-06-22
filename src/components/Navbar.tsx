@@ -11,8 +11,9 @@ const navLinks = [
   { label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },
   { label: "Products", href: "/products" },
-  { label: "Dashboard", href: "/complex-dashboard" },
+  { label: "Dash - Parallel Routes", href: "/complex-dashboard" },
   { label: "Profile", href: "/profile" },
+  { label: "Intercepting Routes", href: "/f1" },
 ];
 
 export default function Navbar() {
