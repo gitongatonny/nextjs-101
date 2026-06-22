@@ -14,6 +14,7 @@ const navLinks = [
   { label: "Dash - Parallel Routes", href: "/complex-dashboard" },
   { label: "Profile", href: "/profile" },
   { label: "Intercepting Routes", href: "/f1" },
+  { label: "Photos", href: "/photo-feed" },
 ];
 
 export default function Navbar() {
