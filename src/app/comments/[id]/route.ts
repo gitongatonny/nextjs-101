@@ -37,3 +37,29 @@ export async function PATCH(
     //Return the updated comment as JSON response (200 OK by default)
     return Response.json(comments[index]);
   }
+
+
+
+//DELETE
+
+//Delete Handler Fn
+export async function DELETE(
+    _request: Request,   //Unused                                
+    { params }: { params: Promise<{ id: string }> }     
+  ) {
+    // Await dynamic route param
+    const { id } = await params;
+  
+    // Find the index of the comment to delete (id is string, convert to int)
+    const index = comments.findIndex((comment) => comment.id === parseInt(id));
+  
+    // Save reference BEFORE deleting — so it can be returned
+    const deletedComment = comments[index];
+  
+    // Remove 1 item at the found index (mutates array in-memory)
+    comments.splice(index, 1);
+  
+    // Return the deleted comment as confirmation (200 OK by default)
+    return Response.json(deletedComment);
+  }
+  
