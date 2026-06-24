@@ -1,11 +1,18 @@
 // Route handler to define and export the GET handler function
 
 //Import comment data
+import { NextRequest } from "next/server";
 import { comments } from "./data"; 
 
 // GET Fn returns comments array as a JSON response
-export async function GET() {
-    return Response.json(comments);
+export async function GET(request: NextRequest) {
+
+    // URL Query (Search Parameters)
+    const searchParams = request.nextUrl.searchParams; //get all quary parameters
+    const query = searchParams.get("query"); //get specific param
+    //get filtered comments if any
+    const filteredComments = query ? comments.filter((comment) => comment.text.includes(query)) : comments;
+    return Response.json(filteredComments);
 } 
 
 // POST fn - handles incoming data and creates a new comment
