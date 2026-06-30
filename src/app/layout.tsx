@@ -1,5 +1,8 @@
 ////Root page metadata
 
+//Import Theme Provider
+import { ThemeProvider } from "@/components/theme-provider";
+
 //Importing metadata
 import { Metadata } from "next";
 
@@ -20,9 +23,12 @@ export const metadata: Metadata = {
 import type { ReactNode } from "react";
 import Navbar from "@/components/Navbar";
 
+
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
+      {/*Wrap the body with the theme context*/}
+      <ThemeProvider>
       <body>
         {/* Global Header */}
         <header
@@ -49,6 +55,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <p style={{ color: "white", fontWeight: "bold" }}>Footer Sample</p>
         </footer>
       </body>
+      </ThemeProvider>
     </html>
   );
 }

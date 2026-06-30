@@ -1,38 +1,18 @@
 "use client";
 
+//Import Theme Provider
+import { useTheme } from "@/components/theme-provider";
+
+import { clientSideFunction } from "@/utils/client-utils";
+
 //server only enforcement
 //import "server-only";
 
-//Image Slider imports
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
-//Import Server fn
-//import { serverSideFunction } from "@/utils/server-utils";
-
-//Image slider
 export default function ClientRoutePage() {
-  const settings = {
-    dots: true,
-  };
-  <br />;
-  return (
-    <div className="image-slider-container">
-      <Slider {...settings}>
-        <div>
-          <img src="https://picsum.photos/400/300" />
-        </div>
-        <div>
-          <img src="http://picsum.photos/g/400/200" />
-        </div>
-        <div>
-          <img src="http://picsum.photos/g/400/200" />
-        </div>
-        <div>
-          <img src="http://picsum.photos/g/400/200" />
-        </div>
-      </Slider>
-    </div>
-  );
+  const theme = useTheme();
+  const result = clientSideFunction();
+
+  return <h1 style={{ color: theme.colors.primary }}>Client Router Page</h1>;
+  <p>{ result }</p>
 }
