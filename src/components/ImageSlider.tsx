@@ -1,18 +1,14 @@
 "use client";
 
-//server only enforcement
-//import "server-only";
+///Import the Server fn
+//import { serverSideFunction } from "@/utils/server-utils";
 
 //Image Slider imports
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-//Import Server fn
-//import { serverSideFunction } from "@/utils/server-utils";
-
-//Image slider
-export default function ClientRoutePage() {
+export const ImageSlider = () => {
   const settings = {
     dots: true,
   };
